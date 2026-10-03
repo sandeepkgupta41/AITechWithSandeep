@@ -1,53 +1,7 @@
-# AITechWithSandeep — Version 2
+# AITechWithSandeep V3
 
-A real AI-chat starter built with Next.js and the OpenAI Responses API.
+Foundation for a free AI platform: landing page, login/dashboard structure, chat workspace, AI tool catalog, Supabase database schema and 20-message/day free-plan design.
 
-## What changed from V1
-- Real server-side `/api/chat` endpoint
-- OpenAI SDK integration
-- API key is kept server-side in `.env.local`
-- Responsive UI
-- AI chat with quick prompts
-- Ready to deploy to Vercel or another Node.js host
+Before public launch, connect Supabase sessions, the server-side OpenAI route, and enforce the daily limit on the server. Never expose an OpenAI API key in browser code.
 
-## Run locally
-
-1. Install Node.js 20+.
-2. Extract this project.
-3. Run:
-
-```bash
-npm install
-```
-
-4. Copy `.env.example` to `.env.local`.
-5. Put your OpenAI API key in `.env.local`.
-6. Run:
-
-```bash
-npm run dev
-```
-
-7. Open `http://localhost:3000`.
-
-## API key security
-
-Never put your OpenAI API key in client-side JavaScript. The key is read only by `app/api/chat/route.js`.
-
-## Cost note
-
-The website can be free for your visitors, but calls to a paid AI API are still billed to the API account. Add rate limits/quotas before opening the site to a large public audience.
-
-## Recommended next upgrades
-
-- Supabase authentication
-- Per-user daily message limits
-- Chat history
-- AI Writer
-- AI Summarizer
-- Prompt Helper
-- YouTube Idea Generator
-- Admin dashboard
-- Usage analytics
-- Abuse/rate limiting
-- Custom domain
+Setup: npm install && npm run dev. Copy .env.example to .env.local and add your credentials.

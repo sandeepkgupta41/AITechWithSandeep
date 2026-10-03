@@ -1,0 +1,4 @@
+create table if not exists public.profiles(id uuid primary key references auth.users(id) on delete cascade,display_name text,created_at timestamptz default now());
+create table if not exists public.conversations(id uuid primary key default gen_random_uuid(),user_id uuid references auth.users(id) on delete cascade not null,title text default 'New chat',created_at timestamptz default now());
+create table if not exists public.messages(id uuid primary key default gen_random_uuid(),conversation_id uuid references public.conversations(id) on delete cascade not null,user_id uuid references auth.users(id) on delete cascade not null,role text check(role in('user','assistant')) not null,content text not null,created_at timestamptz default now());
+create table if not exists public.daily_usage(user_id uuid references auth.users(id) on delete cascade not null,usage_date date not null default current_date,message_count integer not null default 0,primary key(user_id,usage_date));
